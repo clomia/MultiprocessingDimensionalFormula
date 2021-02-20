@@ -15,6 +15,7 @@ class MultiprocessingDimensionalFormula(DimensionalFormula):
     """
     병렬 연산을 지원하는 N차원 수식 객체입니다
     컴퓨터의 CPU갯수와 인스턴스의 모양에 따라 CPU코어를 최대한 사용하는 병렬 연산을 수행할 수 있습니다.
+    ! multiprocessing_convert메서드를 사용해야 합니다
     """
 
     def __init__(self, equation, coupler="+", unit_length=1, dimension=1):

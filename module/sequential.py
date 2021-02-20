@@ -10,7 +10,7 @@ class DimensionalFormula:
     def __init__(self, equation: str, coupler: str = "+", unit_length: int = 1, dimension: int = 1):
         """
         unit_length는 1차원(직선)에서 수식이 몇개가 연결되야 하는지를 지정하는 숫자입니다
-        1차원을 이상의 객체에서 unit_length를 단위 길이로 사용합니다
+        0차원이 아닌 객체에서 unit_length를 단위 길이로 사용합니다
         (단위 길이가 없으면 하나의 객체가 아닌 무한한 공간이 되기 때문에 연산이 불가능합니다)
         """
         self.equation = equation
@@ -43,6 +43,7 @@ class DimensionalFormula:
 
     @staticmethod
     def convertor(equation: str, n: int) -> Union[int, float]:
+        print("메인 연산 진행합니다----")
         """
         n을 미지수로 하는 방정식 문자열와 n값을 입력받아서 방정식을 풀고 정답을 반환합니다.
 
@@ -51,8 +52,11 @@ class DimensionalFormula:
         equation: MutableSequence = list(equation)
         while "n" in equation:
             ndex = equation.index("n")
+            # 정규표현식으로 n앞에 숫자가 있는지 검사
             if re.match("[0-9]", equation[ndex - 1]) and ndex != 0:
                 equation[ndex] = f"*{n}"
+            else:
+                equation[ndex] = str(n)
         return eval("".join(equation))
 
     def convert(self, n):
