@@ -43,7 +43,7 @@
 ![로직을 시각화한 그래픽](N차원-수식객체-시각화-그래픽.jpg)
 _그래픽은 Adobe Illustrator로 제작했습니다_
 
-> ## main.py를 사용해서 병렬 프로세싱으로 향상된 처리 속도 확인하기 (예시)
+## main.py를 사용해서 병렬 프로세싱으로 향상된 처리 속도 확인하기 (예시)
 ```
 PS C:\Users\USER\desktop\MultiprocessingDimensionalFormula> python main.py
 ---N차원 수식 객체를 생성합니다.---
@@ -99,5 +99,8 @@ PS C:\Users\USER\desktop\MultiprocessingDimensionalFormula> python main.py
 > 필자의 컴퓨터는 "인텔® 코어™ i5-9400F 프로세서"로 코어 수 6개-스레드 수 6개 입니다.   
 > 모든 코어를 활용해서 6배 가깝게 속도를 향상시킬수 있었습니다.   
 > (이해하기 어렵지만 가끔 미세하게 6배 이상의 속도향상도 나오곤 합니다)   
-
+   
+## module
+##### DimensionalFormula (N차원 수식 객체 구현 클래스)
+##### MultiprocessingDimensionalFormula (위 클래스를 상속받아 만든 병렬 연산용 클래스)
 소스코드에 독스트링을 자세하게 작성하고 Type annotation를 사용해서 이해하기 쉽도록 하였습니다
