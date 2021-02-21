@@ -101,6 +101,6 @@ PS C:\Users\USER\desktop\MultiprocessingDimensionalFormula> python main.py
 > (이해하기 어렵지만 가끔 미세하게 6배 이상의 속도향상도 나오곤 합니다)   
    
 ## module
-##### DimensionalFormula (N차원 수식 객체 구현 클래스)
-##### MultiprocessingDimensionalFormula (위 클래스를 상속받아 만든 병렬 연산용 클래스)
+### DimensionalFormula (N차원 수식 객체 구현 클래스)
+### MultiprocessingDimensionalFormula (위 클래스를 상속받아 만든 병렬 연산용 클래스)
 소스코드에 독스트링을 자세하게 작성하고 Type annotation를 사용해서 이해하기 쉽도록 하였습니다
