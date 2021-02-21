@@ -43,7 +43,7 @@ if __name__ == "__main__":
         start = time.strftime("%X", time.localtime(start_time))
         print(f"시작 : {start}")
         serial_result = ins_for_serial_operations.convert(n)
-        print(f"연산결과 : {serial_result:.4f}")
+        print(f"연산결과 : {serial_result}")
         finish_time = time.time()
         finish = time.strftime("%X", time.localtime(finish_time))
         serial_time_delta = finish_time - start_time
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         start = time.strftime("%X", time.localtime(start_time))
         print(f"시작 : {start}")
         parallel_result = ins_for_parallel_operations.multiprocessing_convert(n)
-        print(f"연산결과 : {parallel_result:.4f}")
+        print(f"연산결과 : {parallel_result}")
         finish_time = time.time()
         finish = time.strftime("%X", time.localtime(finish_time))
         parallel_time_delta = finish_time - start_time
@@ -65,7 +65,10 @@ if __name__ == "__main__":
         parallel_time_delta = None
 
     if parallel_time_delta and serial_time_delta:
-        print(f"\n\n일반 직렬 연산 결과 : {serial_result:.4f} __ 병렬연산 결과 : {parallel_result:.4f}")
+        print(
+            f"""\n\n일반 직렬 연산 결과 : {serial_result} __ 병렬연산 결과 : {parallel_result}
+            극도로 미세한 결과의 차이는 실수 자료형의 부동소수점 반올림 오차입니다. 무시합니다."""
+        )
         print(
             f"""
         이 컴퓨터의 CPU코어수는 {ins_for_parallel_operations.cpu_count}개 입니다. 병렬 프로그레밍으로 최대 {ins_for_parallel_operations.cpu_count}배 빨라질 수 있음을 의미합니다.
@@ -75,6 +78,6 @@ if __name__ == "__main__":
         메인 쓰레드가 각 CPU들에게서 연산 결과를 (거의 동시에)전달받은 뒤에
         그것들로 최종 결과를 연산하여 값을 반환합니다.
 
-        CPU 멀티코어를 사용해서 연산했을때 {serial_time_delta/parallel_time_delta:.3f}배 더 빨랐습니다.
+        CPU 멀티코어를 사용해서 연산했을때 {serial_time_delta/parallel_time_delta:.2f}배 더 빨랐습니다.
         """
         )
